@@ -11,11 +11,13 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInputs.duration >= 1 && userInputs.duration <= 25;
+
   function handleUserInputChange(e) {
     setUserInputs((prevUserInputs) => {
       return {
         ...prevUserInputs,
-        [e.target.id]: e.target.value,
+        [e.target.id]: +e.target.value,
       };
     });
   }
@@ -26,7 +28,11 @@ function App() {
         onUserInputChange={handleUserInputChange}
         userInput={userInputs}
       />
-      <Results input={userInputs} />
+      {inputIsValid ? (
+        <Results input={userInputs} />
+      ) : (
+        <p className="center">Please enter valid duration (1-25)</p>
+      )}
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function UserInput({ onUserInputChange, userInput }) {
           <input
             type="number"
             required
-            value={userInput.initialInvestment}
+            value={userInput.initialInvestment.toString()}
             onChange={onUserInputChange}
             id="initialInvestment"
           />
@@ -18,7 +18,7 @@ export default function UserInput({ onUserInputChange, userInput }) {
           <input
             type="number"
             required
-            value={userInput.annualInvestment}
+            value={userInput.annualInvestment.toString()}
             onChange={onUserInputChange}
             id="annualInvestment"
           />
@@ -30,7 +30,7 @@ export default function UserInput({ onUserInputChange, userInput }) {
           <input
             type="number"
             required
-            value={userInput.expectedReturn}
+            value={userInput.expectedReturn.toString()}
             onChange={onUserInputChange}
             id="expectedReturn"
           />
@@ -41,7 +41,7 @@ export default function UserInput({ onUserInputChange, userInput }) {
           <input
             type="number"
             required
-            value={userInput.duration}
+            value={userInput.duration.toString()}
             onChange={onUserInputChange}
             id="duration"
           />
